@@ -8,7 +8,15 @@ pipeline {
         }
         stage('Checkout') {
             steps {  
-                echo "test 2"    
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+                                            doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], 
+                                            userRemoteConfigs: [[credentialsId: '28661b99-b4ec-4540-ad3d-9bef5c2e7562', 
+                                            url: 'git@github.com:mingeyes/scm-sc2.git']]])
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'test2.sh'
             }
         }
     }
