@@ -10,6 +10,7 @@ pipeline {
                 echo "test 1"
                 echo "test 1.test1"
                 echo "test1... test1"
+                echo "finish"
             }
         }
         stage('Checkout') {
