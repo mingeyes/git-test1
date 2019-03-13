@@ -4,6 +4,7 @@ pipeline {
         stage('CleanWorkspace'){
             steps {
                 echo "test 1"
+                echo "test 1..."
             }
         }
         stage('Checkout') {
